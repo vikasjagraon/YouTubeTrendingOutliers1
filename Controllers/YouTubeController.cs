@@ -10,6 +10,7 @@ namespace YouTubeTrendingOutliers.Controllers
     using System.Text.Json;
     using System.Text.Json.Serialization;
     
+    [Authorize]
     public class YouTubeController : Controller
     {
         private readonly IHttpClientFactory _clientFactory;
