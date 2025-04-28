@@ -1,0 +1,31 @@
+﻿@model List<OutlierResult>
+
+<h2>Instagram Reels Outlier Detection</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>URL</th>
+            <th>Topic</th>
+            <th>Region</th>
+            <th>Likes</th>
+            <th>Comments</th>
+            <th>Likes Outlier</th>
+            <th>Comments Outlier</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="@(item.IsLikesOutlier || item.IsCommentsOutlier ? "table-danger" : "")">
+                <td><a href="@item.Reel.Url" target="_blank">View Reel</a></td>
+                <td>@item.Reel.Topic</td>
+               
+                <td>@item.Reel.LikesCount</td>
+                <td>@item.Reel.CommentsCount</td>
+                <td>@(item.IsLikesOutlier ? "Yes" : "No")</td>
+                <td>@(item.IsCommentsOutlier ? "Yes" : "No")</td>
+            </tr>
+        }
+    </tbody>
+</table>

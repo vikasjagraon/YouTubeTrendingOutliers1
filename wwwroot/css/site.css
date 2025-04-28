@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -383,14 +383,45 @@ label {
     height: 3rem;
 }
 
-@@media (max-width: 992px) {
+@media (max-width: 992px) {
     .videos-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@@media (max-width: 768px) {
+/* ✅ Corrected and Enhanced Media Queries for Mobile */
+@media (max-width: 992px) {
+    .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
     .videos-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .video-title {
+        font-size: 14px;
+    }
+
+    .video-stats,
+    .video-channel {
+        font-size: 12px;
+    }
+
+    .btn-watch {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    .container {
+        padding: 0 10px;
     }
 }
